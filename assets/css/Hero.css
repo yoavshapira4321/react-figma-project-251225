@@ -1,0 +1,96 @@
+.hero {
+  padding: 4rem 0 6rem;
+
+}
+
+.hero .container {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-title {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 88px;
+    text-align: left;
+    color: #381DA8;
+    text-shadow: 0 0 20px rgba(56, 29, 168, 0.4),
+                 0 0 40px rgba(56, 29, 168, 0.2);
+}
+
+.hero-subtitle {
+    text-align: left;
+
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #381DA8;
+    text-shadow: 0 0 15px rgba(56, 29, 168, 0.3),
+                 0 0 30px rgba(56, 29, 168, 0.15);
+}
+
+/* ...existing code... */
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-demo {
+    padding: 14px 20px;
+    background: #FE3639;
+    border-radius: 100px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.btn-demo:hover {
+  background: #fff5f5;
+  color: #FE3639;
+  cursor: pointer;
+}
+
+
+.network-diagram {
+  width: 100%;
+  height: 100%;
+}
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+}

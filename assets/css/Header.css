@@ -1,0 +1,181 @@
+/* Primary button hover: swap background and font color */
+.btn.btn-primary:hover {
+  background: #FFFFFF;
+  color: #381DA8;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 3rem;
+  margin: 0 auto;
+  width: 89.5%;
+  position: sticky;
+  box-shadow: 0px 0px 60px rgba(56, 29, 168, 0.5);
+  border-radius: 50px;
+  top: 16px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-link {
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #5B4FFF;
+}
+
+.dropdown-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 6px;
+  margin-left: 4px;
+}
+
+.dropdown-arrow img {
+  width: 10px;
+  height: 6px;
+  display: block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #F5F3FF;
+  border-radius: 32px;
+  padding: 32px 40px;
+  min-width: 420px;
+  box-shadow: 0px 16px 48px rgba(56, 29, 168, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-header {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.dropdown-link {
+  display: block;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #381DA8;
+  text-decoration: none;
+  padding: 16px;
+  transition: all 0.2s;
+}
+
+.dropdown-link:first-of-type {
+  background: transparent;
+  border-radius: 100px;
+  margin-bottom: 8px;
+}
+
+.dropdown-link.active {
+  background: #D6D1F8;
+  border-radius: 100px;
+}
+
+.dropdown-link:hover {
+  background: #D6D1F8;
+  border-radius: 100px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn {
+
+
+padding: 14px 20px;
+
+/* brand purple */
+background: #381DA8;
+border-radius: 100px;
+
+
+font-family: 'Figtree';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+/* white */
+color: #FFFFFF;
+
+
+
+}
+
+/* .btn-login removed; now uses .btn.btn-primary */
+
+
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
+  .header {
+    padding: 0.75rem 1.5rem;
+  }
+}

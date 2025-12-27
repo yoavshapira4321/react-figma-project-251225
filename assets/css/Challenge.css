@@ -1,0 +1,71 @@
+.challenge {
+  padding: 5rem 0;
+}
+
+.challenge .container {
+  margin: 0 auto;
+  padding: 48px;
+  border-radius: 24px;
+  background-color: white;
+  display: grid;
+  box-shadow: 0 4px 94px 0 #DCDADF;
+
+
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.challenge-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.challenge-content{
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.section-title {
+
+
+/* 1920 WEB H2 */
+
+color: #FE3639;
+text-shadow: 0px 0px 12px rgba(254, 54, 57, 0.25);
+
+
+
+}
+
+.section-text {
+/* Modern environments are saturated with non-human identities, secrets, service accounts, AI agents, tokens, and certificates. They are created dynamically, used across environments, and often outlive their original purpose. Most discovery tools stop at static inventory or posture. They show what exists, but not what’s actually being used, what’s exposed at runtime, or what poses real risk right now. This leads to noise, false priorities, and missed critical gaps. And even then, many tools only show what you’ve explicitly integrated, so coverage is limited by definition and blind spots are inevitable. Without runtime visibility, teams are left guessing. */
+
+
+/* 1920 WEB BODY TEXT */
+font-family: 'Figtree';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 34px;
+/* or 170% */
+
+/* text AND  critical bg */
+color: #504461;
+
+
+
+}
+
+@media (max-width: 768px) {
+  .challenge .container {
+    grid-template-columns: 1fr;
+  }
+}

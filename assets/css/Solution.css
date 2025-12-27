@@ -1,0 +1,90 @@
+.solution {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.solution-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 1380px;
+  max-width: 100%;
+}
+
+.solution-title {
+  width: 360px;
+  height: 88px;
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 88px;
+  color: #381DA8;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0;
+}
+
+.solution-subtitle {
+  width: 1380px;
+  max-width: 100%;
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  color: #381DA8;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0;
+}
+
+/* .solution-description removed as .body-text will be used */
+
+@media (max-width: 1400px) {
+  .solution-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .solution-title {
+    width: 100%;
+    height: auto;
+    font-size: 48px;
+    line-height: 64px;
+  }
+  
+  .solution-subtitle {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  
+  .solution-description {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  
+  .solution-subtitle {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+  .solution-description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

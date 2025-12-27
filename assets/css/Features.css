@@ -1,0 +1,164 @@
+.features-discovery {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.features-discovery .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.features-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;}
+.features-title {
+  color: #381DA8;
+}
+
+.features-subtitle {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #381DA8;
+  margin-bottom: 1.125rem;
+}
+
+.features-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 24px;
+  gap: 18px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.feature-number {
+  flex-shrink: 0;
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #504461;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+}
+
+.feature-text {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #504461;
+  margin: 0;
+}
+
+.features-runtime {
+  background: transparent;
+  padding: 5rem 0;
+}
+
+.features-runtime .container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.runtime-box {
+  background: linear-gradient(287.8deg, #FFFFFF 55.8%, #381DA8 55.9%);
+  border-radius: 40px;
+  padding: 40px 48px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.runtime-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  border-radius: 24px;
+  margin: 48px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.runtime-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.runtime-title {
+  color: #381DA8;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.runtime-subtitle {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #381DA8;
+  margin-bottom: 1.125rem;
+  padding-left: 40px;
+}
+
+.runtime-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  padding-bottom: 40px;
+  padding-left: 40px;
+}
+
+.runtime-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.runtime-number {
+  flex-shrink: 0;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #504461;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+}
+
+/* ...existing code... */

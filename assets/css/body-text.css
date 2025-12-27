@@ -1,0 +1,11 @@
+/* Shared body text style for all main content paragraphs */
+.body-text {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+
+  color: #504461;
+  margin: 0;
+}

@@ -1,0 +1,252 @@
+.footer {
+  background: #080C31;
+  color: white;
+  padding: 80px 0 40px;
+  display: flex;
+  width: 1760px;
+  justify-content: center;
+  margin: 0px auto;
+  border-radius: 24px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.footer-container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.footer-logo-section {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 56px;
+}
+
+.footer-logo {
+  width: 253px;
+  height: 35px;
+}
+
+.footer-content {
+  display: flex;
+  padding-bottom: 80px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column.platform {
+  width: 279px;
+  gap: 16px;
+}
+
+.footer-column.solutions {
+  width: 730px;
+  gap: 16px;
+}
+
+.footer-column.resources-company {
+  width: 265px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column-title {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #F6F5F7;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.column-subtitle {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00FFFF;
+  margin: 0;
+}
+
+.column-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column-links li {
+  display: flex;
+}
+
+.column-links a {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  color: #DCDADF;
+  text-decoration: none;
+  padding: 6px 6px 6px 0;
+  border-bottom: 0.75px solid #968FA0;
+  display: block;
+  width: 100%;
+  transition: color 0.2s;
+}
+
+.column-links a:hover {
+  color: #00FFFF;
+}
+
+
+
+.solutions-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.solutions-col {
+  flex: 1;
+}
+
+.rc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+.social-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 56px;
+  border-top: 1px solid #968FA0;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.copyright {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #DCDADF;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.legal-links {
+  display: flex;
+  gap: 8px;
+}
+
+.legal-links a {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #DCDADF;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 2px;
+  transition: color 0.2s;
+}
+
+.legal-links a:hover {
+  color: #00FFFF;
+}
+
+.footer-badge {
+  display: flex;
+  align-items: flex-end;
+}
+
+.aicpa-badge {
+  width: 85px;
+  height: 85px;
+}
+
+@media (max-width: 1400px) {
+  .footer-container {
+    padding: 0 40px;
+  }
+  
+  .footer-columns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+  }
+  
+  .footer-column.platform,
+  .footer-column.solutions,
+  .footer-column.resources-company {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}

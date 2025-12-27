@@ -1,0 +1,9 @@
+/* Shared heading style for all 40px headings */
+.heading-40 {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 56px;
+  margin-bottom: 1.5rem;
+}

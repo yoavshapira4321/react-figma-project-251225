@@ -1,0 +1,267 @@
+.why-runtime {
+/* Frame 1968 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 80px 0px;
+
+width: 1760px;
+height: 891px;
+
+/* brand purple */
+background: #381DA8;
+border-radius: 24px;
+
+/* Inside auto layout */
+
+margin: 0px auto;
+margin-bottom:40px;
+
+
+}
+
+.why-runtime .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.why-runtime-title {
+/* Why Runtime Is the Missing Layer */
+
+
+font-family: 'Figtree';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 88px;
+/* identical to box height, or 138% */
+text-align: center;
+
+/* white */
+color: #FFFFFF;
+
+}
+
+.why-runtime-subtitle {
+/* Discovery shows what exists. Runtime shows what’s risky. */
+
+font-family: 'Figtree';
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 40px;
+margin-bottom: 60px;
+margin-top: 16px;
+
+/* identical to box height, or 143% */
+text-align: center;
+
+/* white */
+color: #FFFFFF;
+
+}
+
+.runtime-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pyramid-container {
+  background: #080C31;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 486px;
+}
+
+.pyramid-header {
+  margin-bottom: 24px;
+}
+
+.pyramid-title {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #968FA0;
+  margin: 0;
+}
+
+.pyramid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pyramid-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-bottom: 1px solid #381DA8;
+  min-height: 107px;
+}
+
+.pyramid-row:first-child {
+  min-height: 107px;
+}
+
+.pyramid-shape {
+  display: flex;
+  align-items: stretch;
+  padding-right: 24px;
+}
+
+.pyramid-shape.red {
+  width: 63px;
+  margin: 0 auto;
+}
+
+.pyramid-shape.orange {
+  width: 112px;
+}
+
+.pyramid-shape.yellow {
+  width: 138px;
+}
+
+.pyramid-shape.purple {
+  width: 194px;
+}
+
+.shape-trapezoid {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pyramid-shape.red .shape-trapezoid {
+  background: #FE3639;
+  clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+}
+
+.pyramid-shape.orange .shape-trapezoid {
+  background: #FF761B;
+  clip-path: polygon(0% 0%, 45% 0%, 100% 100%, 0% 100%);
+}
+
+.pyramid-shape.yellow .shape-trapezoid {
+  background: #FFCC00;
+  clip-path: polygon(0% 0%, 77.75% 0%, 100% 100%, 0% 100%);
+}
+
+.pyramid-shape.purple .shape-trapezoid {
+  background: #381DA8;
+  clip-path: polygon(0% 0%, 67.5% 0%, 100% 100%, 0% 100%);
+}
+
+.pyramid-info {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 8px 24px;
+}
+
+.info-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.pyramid-row:first-child .info-content {
+  justify-content: flex-start;
+}
+
+.info-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.info-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.pyramid-row:first-child .info-label {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.start-triage {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #00FFFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s;
+}
+
+.start-triage:hover {
+  opacity: 0.8;
+}
+
+.info-label {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #DCDADF;
+  text-align: right;
+}
+
+.info-number {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+  color: #DCDADF;
+  text-align: right;
+}
+
+.red-number {
+  font-size: 48px;
+  line-height: 50px;
+  color: #FE3639;
+}
+
+.runtime-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* .runtime-text p removed as .body-text will be used */
+.why-runtime p.body-text {
+  color: #FFFFFF;
+}
+
+@media (max-width: 968px) {
+  .runtime-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .pyramid-container {
+    max-width: 100%;
+  }
+}

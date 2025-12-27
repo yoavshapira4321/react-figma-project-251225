@@ -1,0 +1,114 @@
+/* Ensure nav links are side by side */
+.nav-menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.nav-item.has-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: none;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 220px;
+  z-index: 10;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Center align text in the value section */
+.value-container, .value-container .value-title, .value-container .value-grid, .value-container .value-card, .value-container .body-text {
+  text-align: center;
+}
+/*
+Theme Name: HushSecurity
+Theme URI: https://hushsecurity.com
+Author: Your Name
+Author URI: https://hushsecurity.com
+Description: A modern security landing page theme for HushSecurity
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hushsecurity
+Tags: security, landing-page, modern, responsive
+*/
+
+/* Import Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+:root {
+  font-family: 'Figtree', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --primary-color: #5B4FFF;
+  --secondary-color: #FF5555;
+  --purple-brand: #381DA8;
+  --text-dark: #1a1a1a;
+  --text-medium: #4a4a4a;
+  --text-light: #6a6a6a;
+  --background-light: #fafafa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+main {
+  position: relative;
+  /* TODO: Replace with actual background image */
+  background-image: 
+    linear-gradient(135deg, rgba(91, 79, 255, 0.03) 0%, rgba(56, 29, 168, 0.05) 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(91, 79, 255, 0.02) 35px, rgba(91, 79, 255, 0.02) 70px);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  /* When adding actual image, use:
+     background-image: url('assets/images/site-background.jpg');
+     background-size: cover;
+     background-position: center top;
+     background-attachment: fixed;
+  */
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

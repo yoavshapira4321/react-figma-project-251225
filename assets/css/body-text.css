@@ -9,3 +9,15 @@
   color: #504461;
   margin: 0;
 }
+@media screen and (max-width: 1920px) and (min-width: 1440px) {
+
+.body-text {
+color: var(--text-AND-critical-bg, #504461);
+/* 1280-1440 WEB BODY TEXT */
+font-family: Figtree;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 25.5px; /* 170% */
+}
+}

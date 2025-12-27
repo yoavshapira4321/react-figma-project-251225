@@ -1,79 +1,109 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-logo-section">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dark-logo.svg" alt="HushSecurity" class="footer-logo" />
+            <?php
+            if (function_exists('get_field')) {
+                $footer_logo = get_field('footer-logo-section', 'option');
+                if ($footer_logo && isset($footer_logo['url'])) {
+                    echo '<img src="' . esc_url($footer_logo['url']) . '" alt="HushSecurity" class="footer-logo" />';
+                }
+            }
+            ?>
         </div>
-        
+
         <div class="footer-content">
             <div class="footer-columns">
-                <div class="footer-column platform">
-                    <h3 class="column-title">Platform</h3>
-                    <p class="column-subtitle">Capabilities</p>
-                    <ul class="column-links">
-                        <li><a href="#">Observability & Discovery</a></li>
-                        <li><a href="#">Posture & Risk Prioritization</a></li>
-                        <li><a href="#">Remediation & Prevention</a></li>
-                    </ul>
-                    <button class="btn btn-demo">Get a Demo</button>
-                </div>
-                
-                <div class="footer-column solutions">
-                    <h3 class="column-title">Solutions</h3>
-                    <p class="column-subtitle">By Use Case</p>
-                    <div class="solutions-grid">
-                        <div class="solutions-col">
-                            <ul class="column-links">
-                                <li><a href="#">Prevent NHI Risk With Secretless Access</a></li>
-                                <li><a href="#">Certificate Lifecycle Automation</a></li>
-                                <li><a href="#">AI Agent & MCP Visibility and Governance</a></li>
-                                <li><a href="#">Identity-Driven Database Access</a></li>
-                                <li><a href="#">Migrate Secrets Automatically & Safely</a></li>
-                            </ul>
-                        </div>
-                        <div class="solutions-col">
-                            <ul class="column-links">
-                                <li><a href="#">AI Agent & MCP Visibility and Governance</a></li>
-                                <li><a href="#">Automate NHI Lifecycle Management</a></li>
-                                <li><a href="#">Identity-Driven Database Access</a></li>
-                                <li><a href="#">M&A Identity and Secrets Visibility</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-column resources-company">
-                    <div class="rc-section">
-                        <h3 class="column-title">Resources</h3>
-                    </div>
-                    <div class="rc-section">
-                        <h3 class="column-title">Company</h3>
-                    </div>
-                </div>
+                <?php
+                if (function_exists('get_field')) {
+                    $footer_columns = get_field('footer-column', 'option');
+                    if ($footer_columns) {
+                        foreach ($footer_columns as $column) {
+                            echo '<div class="footer-column">';
+                            // Content container for title, subtitle, and links
+                            echo '<div class="column-content">';
+                            if (!empty($column['column-title'])) {
+                                echo '<h3 class="column-title">' . esc_html($column['column-title']) . '</h3>';
+                            }
+                            if (!empty($column['column-subtitle'])) {
+                                echo '<p class="column-subtitle">' . esc_html($column['column-subtitle']) . '</p>';
+                            }
+                            if (!empty($column['column-links'])) {
+                                echo '<div class="column-links-row">';
+                                foreach ($column['column-links'] as $col) {
+                                    if (!empty($col['col'])) {
+                                        echo '<ul class="column-links">';
+                                        foreach ($col['col'] as $link) {
+                                            $label = !empty($link['herf']) ? esc_html($link['herf']) : '';
+                                            echo '<li><a href="#">' . $label . '</a></li>';
+                                        }
+                                        echo '</ul>';
+                                    }
+                                }
+                                echo '</div>';
+                            }
+                            echo '</div>'; // end .column-content
+                            if (!empty($column['btn-demo-footer'])) {
+                                echo '<button class="btn btn-demo">' . esc_html($column['btn-demo-footer']) . '</button>';
+                            }
+                            echo '</div>';
+                        }
+                    }
+                }
+                ?>
             </div>
-            
+
             <div class="social-icons">
-                <a href="#" class="social-icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meta-logo.svg" alt="Facebook" />
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin-logo.svg" alt="LinkedIn" />
-                </a>
-                <a href="#" class="social-icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/x-logo.svg" alt="X" />
-                </a>
+                <?php
+                if (function_exists('get_field')) {
+                    $social_icons = get_field('social-icons', 'option');
+                    if ($social_icons) {
+                        foreach ($social_icons as $icon) {
+                            if (!empty($icon['social-icon']) && isset($icon['social-icon']['url'])) {
+                                echo '<a href="#" class="social-icon"><img src="' . esc_url($icon['social-icon']['url']) . '" alt="Social Icon" /></a>';
+                            }
+                        }
+                    }
+                }
+                ?>
             </div>
         </div>
         
         <div class="footer-bottom">
             <div class="footer-legal">
-                <p class="copyright">2026 Hush Security All Rights Reserved</p>
+                <p class="copyright">
+                    <?php
+                    if (function_exists('get_field')) {
+                        $copyright = get_field('copyright', 'option');
+                        if ($copyright) {
+                            echo esc_html($copyright);
+                        }
+                    }
+                    ?>
+                </p>
                 <div class="legal-links">
-                    <a href="#">Privacy Policy ›</a>
-                    <a href="#">Terms ›</a>
+                    <?php
+                    if (function_exists('get_field')) {
+                        $legal_links = get_field('legal-links', 'option');
+                        if ($legal_links) {
+                            foreach ($legal_links as $link) {
+                                if (!empty($link['herf-footer'])) {
+                                    echo '<a href="#">' . esc_html($link['herf-footer']) . ' ›</a>';
+                                }
+                            }
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="footer-badge">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aicpa.svg" alt="AICPA SOC" class="aicpa-badge" />
+                <?php
+                if (function_exists('get_field')) {
+                    $footer_badge = get_field('footer-badge', 'option');
+                    if ($footer_badge && isset($footer_badge['url'])) {
+                        echo '<img src="' . esc_url($footer_badge['url']) . '" alt="AICPA SOC" class="aicpa-badge" />';
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>

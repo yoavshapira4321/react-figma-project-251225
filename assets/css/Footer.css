@@ -10,6 +10,11 @@
   margin-bottom: 60px;
   align-items: center;
 }
+.column-links-row{
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
 
 .footer-container {
   max-width: 1600px;
@@ -45,6 +50,7 @@
 }
 
 .footer-column {
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
 }

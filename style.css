@@ -1,3 +1,17 @@
+/* Absolute background image for main, from ACF */
+.background-image-absolute {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  opacity: .5;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
 /* Ensure nav links are side by side */
 .nav-menu {
   display: flex;
@@ -91,19 +105,9 @@ body {
 
 main {
   position: relative;
-  /* TODO: Replace with actual background image */
-  background-image: 
-    linear-gradient(135deg, rgba(91, 79, 255, 0.03) 0%, rgba(56, 29, 168, 0.05) 100%),
-    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(91, 79, 255, 0.02) 35px, rgba(91, 79, 255, 0.02) 70px);
-  background-attachment: fixed;
   background-size: cover;
   background-position: center top;
-  /* When adding actual image, use:
-     background-image: url('assets/images/site-background.jpg');
-     background-size: cover;
-     background-position: center top;
-     background-attachment: fixed;
-  */
+  background-attachment: fixed;
 }
 
 .container {

@@ -1,13 +1,27 @@
 
 
+
+
+<?php
+    if (function_exists('get_field')) {
+        $background = get_field('background', get_queried_object_id());
+        if ($background && isset($background['url'])) {
+            echo '<div class="background-image-absolute" style="background-image: url(' . esc_url($background['url']) . ');"></div>';
+        }
+    }
+    ?>
+
 <?php get_header(); ?>
 
+
 <main>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
+
                     <?php
                         if (function_exists(function: 'get_field')) {
                             $hero_title = get_field('hero-title', get_queried_object_id());
@@ -60,19 +74,12 @@
                     </button>
                 </div>
             </div>
-                <?php
-                    if (function_exists(function: 'get_field')) {
-                        $see_everything = get_field('see-everything', get_queried_object_id());
-                        if ($see_everything && isset($see_everything['url'])) {
-                            echo '<img src="' . esc_url($see_everything['url']) . '" alt="Network Diagram" />';
-                        }
-                    }
-                ?>
+        </div>
     </section>
 
     <!-- Challenge Section -->
     <section class="challenge">
-        <div class="container">
+        <div class="container" style="display: flex; gap: 2rem; align-items: top;">
             <div class="challenge-illustration">
                 <?php
                     if (function_exists('get_field')) {
@@ -94,16 +101,19 @@
                         }
                     ?>
                 </h2>
-                <p class="body-text">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $challenge_body = get_field('challenge-body-text', get_queried_object_id());
-                            if ($challenge_body) {
-                                echo nl2br(esc_html($challenge_body));
+                <?php
+                    if (function_exists('get_field')) {
+                        $challenge_body = get_field('challenge-body-text', get_queried_object_id());
+                        if ($challenge_body) {
+                            $lines = preg_split('/\r\n|\r|\n/', $challenge_body);
+                            foreach ($lines as $line) {
+                                if (trim($line) !== '') {
+                                    echo '<p class="body-text">' . esc_html($line) . '</p>';
+                                }
                             }
                         }
-                    ?>
-                </p>
+                    }
+                ?>
             </div>
         </div>
     </section>
@@ -147,33 +157,30 @@
     <!-- Features Section -->
     <section class="features-discovery">
         <div class="container">
-            <div class="features-content">
-                <h2 class="features-title heading-40">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $features_title = get_field('features-discovery-title', get_queried_object_id());
-                            if ($features_title) {
-                                echo esc_html($features_title);
+            <?php
+            if (function_exists('get_field')) {
+                $features_discovery = get_field('features-discovery', get_queried_object_id());
+                if ($features_discovery) {
+                    $i = 0;
+                    foreach ($features_discovery as $row) {
+                        $i++;
+                        if ($i % 2 === 1) {
+                            // Odd iteration: image first, then content
+                            echo '<div class="features-image">';
+                            if (!empty($row['feature-image']) && isset($row['feature-image']['url'])) {
+                                echo '<img src="' . esc_url($row['feature-image']['url']) . '" alt="Feature Image" />';
                             }
-                        }
-                    ?>
-                </h2>
-                <p class="features-subtitle">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $features_subtitle = get_field('features-subtitle', get_queried_object_id());
-                            if ($features_subtitle) {
-                                echo nl2br(esc_html($features_subtitle));
+                            echo '</div>';
+                            echo '<div class="features-content">';
+                            if (!empty($row['features-discovery-title'])) {
+                                echo '<h2 class="features-title heading-40">' . esc_html($row['features-discovery-title']) . '</h2>';
                             }
-                        }
-                    ?>
-                </p>
-                <div class="features-grid">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $features_grid = get_field('features-grid', get_queried_object_id());
-                            if ($features_grid) {
-                                foreach ($features_grid as $feature) {
+                            if (!empty($row['features-subtitle'])) {
+                                echo '<p class="features-subtitle">' . nl2br(esc_html($row['features-subtitle'])) . '</p>';
+                            }
+                            if (!empty($row['features-grid'])) {
+                                echo '<div class="features-grid">';
+                                foreach ($row['features-grid'] as $feature) {
                                     echo '<div class="feature-item">';
                                     if (!empty($feature['feature-number'])) {
                                         echo '<span class="feature-number">' . esc_html($feature['feature-number']) . '</span>';
@@ -183,70 +190,46 @@
                                     }
                                     echo '</div>';
                                 }
+                                echo '</div>';
                             }
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class="features-image">
-                <?php
-                    if (function_exists('get_field')) {
-                        $feature_image = get_field('feature-image', get_queried_object_id());
-                        if ($feature_image && isset($feature_image['url'])) {
-                            echo '<img src="' . esc_url($feature_image['url']) . '" alt="Solution Diagram" />';
-                        }
-                    }
-                ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Runtime Visibility Section -->
-    <section class="features-runtime">
-        <div class="container">
-            <div class="runtime-box">
-                <h2 class="runtime-title heading-40">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $runtime_title = get_field('features-runtime-title', get_queried_object_id());
-                            if ($runtime_title) {
-                                echo esc_html($runtime_title);
+                            echo '</div>';
+                        } else {
+                            // Even iteration: content first, then image
+                            echo '<div class="features-content">';
+                            if (!empty($row['features-discovery-title'])) {
+                                echo '<h2 class="features-title heading-40">' . esc_html($row['features-discovery-title']) . '</h2>';
                             }
-                        }
-                    ?>
-                </h2>
-                <p class="runtime-subtitle">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $runtime_subtitle = get_field('runtime-subtitle', get_queried_object_id());
-                            if ($runtime_subtitle) {
-                                echo nl2br(esc_html($runtime_subtitle));
+                            if (!empty($row['features-subtitle'])) {
+                                echo '<p class="features-subtitle">' . nl2br(esc_html($row['features-subtitle'])) . '</p>';
                             }
-                        }
-                    ?>
-                </p>
-                <div class="runtime-list">
-                    <?php
-                        if (function_exists('get_field')) {
-                            $runtime_list = get_field('runtime-list', get_queried_object_id());
-                            if ($runtime_list) {
-                                foreach ($runtime_list as $runtime) {
-                                    echo '<div class="runtime-item">';
-                                    if (!empty($runtime['runtime-number'])) {
-                                        echo '<span class="runtime-number">' . esc_html($runtime['runtime-number']) . '</span>';
+                            if (!empty($row['features-grid'])) {
+                                echo '<div class="features-grid">';
+                                foreach ($row['features-grid'] as $feature) {
+                                    echo '<div class="feature-item">';
+                                    if (!empty($feature['feature-number'])) {
+                                        echo '<span class="feature-number">' . esc_html($feature['feature-number']) . '</span>';
                                     }
-                                    if (!empty($runtime['runtime-body-text'])) {
-                                        echo '<p class="body-text">' . esc_html($runtime['runtime-body-text']) . '</p>';
+                                    if (!empty($feature['feature-text'])) {
+                                        echo '<p class="feature-text">' . esc_html($feature['feature-text']) . '</p>';
                                     }
                                     echo '</div>';
                                 }
+                                echo '</div>';
                             }
+                            echo '</div>';
+                            echo '<div class="features-image">';
+                            if (!empty($row['feature-image']) && isset($row['feature-image']['url'])) {
+                                echo '<img src="' . esc_url($row['feature-image']['url']) . '" alt="Feature Image" />';
+                            }
+                            echo '</div>';
                         }
-                    ?>
-                </div>
-            </div>
+                    }
+                }
+            }
+            ?>
         </div>
     </section>
+
 
     <!-- New Container Section -->
     <section class="know-section">
